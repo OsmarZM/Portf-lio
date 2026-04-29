@@ -5,9 +5,18 @@
     {
       "src": "index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "osmar_cv.pdf",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/osmar_cv.pdf",
+      "dest": "/osmar_cv.pdf",
+      "headers": { "Content-Type": "application/pdf", "Content-Disposition": "attachment; filename=\"Osmar_Zanateli_CV.pdf\"" }
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
