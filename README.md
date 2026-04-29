@@ -2,7 +2,7 @@
 
 > Portfólio pessoal dark-tech com animações interativas, construído com React standalone (sem build) e deployável em qualquer CDN estático.
 
-**🔗 Live:** [osmar-portfolio.vercel.app](https://osmar-portfolio.vercel.app) *(após deploy)*  
+**🔗 Live:** [portfolio-osmarzm.vercel.app](https://portfolio-osmarzm.vercel.app) *(após deploy)*  
 **👤 GitHub:** [github.com/OsmarZM](https://github.com/OsmarZM)  
 **📸 Instagram:** [@osmar.zanateli](https://instagram.com/osmar.zanateli)
 
@@ -57,7 +57,7 @@ osmar-portfolio/
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/OsmarZM/osmar-portfolio.git
+git clone https://github.com/OsmarZM/Portf-lio.git
 cd osmar-portfolio
 
 # 2. Deploy com Vercel CLI
