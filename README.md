@@ -2,7 +2,8 @@
 
 > Portfólio pessoal dark-tech com animações interativas, construído com React standalone (sem build) e deployável em qualquer CDN estático.
 
-**🔗 Live:** [portfolio-osmarzm.vercel.app](https://portfolio-osmarzm.vercel.app) *(após deploy)*  
+**🔗 Live:** [portfofilo-mu.vercel.app](https://portfofilo-mu.vercel.app)  
+**💼 LinkedIn:** [linkedin.com/in/osmarzm](https://linkedin.com/in/osmarzm)  
 **👤 GitHub:** [github.com/OsmarZM](https://github.com/OsmarZM)  
 **📸 Instagram:** [@osmar.zanateli](https://instagram.com/osmar.zanateli)
 

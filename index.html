@@ -4,13 +4,16 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Osmar ZM — Developer & Systems Architect</title>
-  <meta name="description" content="Portfolio de Osmar ZM — Developer & Systems Architect na Fortatech. AI Integration, CRM Systems, IT Infrastructure."/>
+  <meta name="description" content="Portfolio de Osmar Zanateli Moreno — Developer focado em IA Aplicada, Automação e Integrações na Fortatech."/>
   <meta property="og:title" content="Osmar ZM — Developer & Systems Architect"/>
   <meta property="og:description" content="Sistemas construídos para resolver problemas reais em produção."/>
+  <meta property="og:url" content="https://portfofilo-mu.vercel.app/"/>
   <meta name="theme-color" content="#030608"/>
+  <!-- Favicon OZ -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23030608'/%3E%3Crect width='32' height='32' rx='6' fill='none' stroke='%2300D4FF' stroke-width='1.5' opacity='.5'/%3E%3Ctext x='16' y='22' font-family='Arial Black,sans-serif' font-size='13' font-weight='900' fill='%2300D4FF' text-anchor='middle' letter-spacing='-1'%3EOZ%3C/text%3E%3C/svg%3E"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" crossorigin></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" crossorigin></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js" crossorigin></script>
@@ -25,10 +28,11 @@
     @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
     @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    @keyframes scanPulse{0%,100%{opacity:0.03}50%{opacity:0.06}}
+    @keyframes scanPulse{0%,100%{opacity:.03}50%{opacity:.06}}
     @keyframes glitchA{0%,100%{clip-path:inset(50% 0 30% 0);transform:translateX(-4px)}50%{clip-path:inset(10% 0 70% 0);transform:translateX(4px)}}
     @keyframes glitchB{0%,100%{clip-path:inset(70% 0 10% 0);transform:translateX(4px)}50%{clip-path:inset(30% 0 50% 0);transform:translateX(-4px)}}
-    @keyframes orbitGlow{0%{box-shadow:0 0 0 1px rgba(0,212,255,0.06),0 0 40px rgba(0,212,255,0)}50%{box-shadow:0 0 0 1px rgba(0,212,255,0.16),0 0 40px rgba(0,212,255,0.06)}100%{box-shadow:0 0 0 1px rgba(0,212,255,0.06),0 0 40px rgba(0,212,255,0)}}
+    @keyframes orbitGlow{0%{box-shadow:0 0 0 1px rgba(0,212,255,.06),0 0 40px rgba(0,212,255,0)}50%{box-shadow:0 0 0 1px rgba(0,212,255,.16),0 0 40px rgba(0,212,255,.06)}100%{box-shadow:0 0 0 1px rgba(0,212,255,.06),0 0 40px rgba(0,212,255,0)}}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
     .nav-link{color:#47596E;text-decoration:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:color .2s}
     .nav-link:hover{color:#00D4FF}
     .btn-primary{transition:transform .2s,box-shadow .2s}
@@ -37,393 +41,340 @@
     .btn-ghost:hover{color:#00D4FF!important;border-color:rgba(0,212,255,.4)!important}
     .card-lift{transition:transform .3s cubic-bezier(.2,.8,.3,1)}
     .card-lift:hover{transform:translateY(-5px)}
-    .tag-pill{transition:color .2s,border-color .2s,background .2s}
+    .tag-pill{transition:color .2s,border-color .2s}
     .tag-pill:hover{color:#00D4FF!important;border-color:rgba(0,212,255,.3)!important}
+    /* NAV responsive */
+    .ham-btn{display:none;background:none;border:1px solid rgba(0,212,255,.2);border-radius:6px;padding:7px 11px;cursor:pointer;color:#00D4FF;font-size:18px;line-height:1}
+    /* Mobile breakpoints */
+    @media(max-width:768px){
+      .nav-links,.nav-gh{display:none!important}
+      .ham-btn{display:flex!important;align-items:center;justify-content:center}
+      .nav-bar{padding:0 20px!important}
+      .hero-sec{padding:80px 20px 0!important}
+      .hero-badge span{font-size:9px!important;letter-spacing:.12em!important}
+      .hero-btns{flex-direction:column!important;width:100%!important;max-width:320px!important}
+      .hero-btns a{text-align:center!important;padding:13px 20px!important}
+      .hero-stats{gap:18px!important;margin-top:44px!important}
+      .stat-n{font-size:1.5rem!important}
+      .sec-pad{padding:60px 20px 44px!important}
+      .sec-sym{padding:60px 20px!important}
+      .proj-grid{grid-template-columns:1fr!important}
+      .about-grid{grid-template-columns:1fr!important}
+      .term-body{padding:14px 16px!important;font-size:11px!important;line-height:1.9!important}
+      .stack-pad{padding:0 20px!important}
+      .contact-btns{flex-direction:column!important;align-items:stretch!important}
+      .contact-btns a{text-align:center!important}
+      .footer-row{flex-direction:column!important;align-items:flex-start!important;gap:6px!important}
+    }
+    @media(max-width:420px){
+      .hero-stats{gap:12px!important}
+      .stat-n{font-size:1.3rem!important}
+    }
     #root{min-height:100vh}
   </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="text/babel">
-    const { useState, useEffect, useRef, useCallback } = React;
+<div id="root"></div>
+<script type="text/babel">
+  const{useState,useEffect,useRef,useCallback}=React;
+  const C={bg:"#030608",surface:"#07090F",cyan:"#00D4FF",purple:"#8B5CF6",green:"#10FFAA",pink:"#F026A2",amber:"#F59E0B",text:"#D1DCE8",muted:"#47596E"};
 
-    const C = {
-      bg:"#030608", surface:"#07090F", s2:"#0C1018",
-      cyan:"#00D4FF", purple:"#8B5CF6", green:"#10FFAA",
-      pink:"#F026A2", amber:"#F59E0B", text:"#D1DCE8", muted:"#47596E",
-    };
+  const PROJECTS=[
+    {id:1,name:"WhatsApp AI Sales Assistant",badge:"PRIVADO",year:"2025",color:C.cyan,
+     stack:["Node.js","Baileys","Meta Cloud API","Claude AI","GPT-4o","Gemini","Supabase","Bitrix24"],
+     problem:"Vendedores externos operavam 100% no celular sem acesso a sistemas. Gerar uma proposta levava horas e leads eram perdidos por falta de agilidade.",
+     solution:"Agente multi-IA com failover automático (Claude → GPT-4o → Gemini), lookup por CNPJ, lock de lead por 30 dias, geração de PDF e criação automática de card no CRM.",
+     metric:"Proposta gerada em < 2 minutos"},
+    {id:2,name:"Fortatech Knowledge Graph",badge:"PRIVADO",year:"2026",color:C.purple,
+     stack:["Node.js","Supabase","pgvector","Notion API","Obsidian","TypeScript"],
+     problem:"Conhecimento institucional fragmentado entre pessoas e sistemas. Onboarding lento e expertise perdida na saída de colaboradores.",
+     solution:"Plataforma de grafo vivo com embeddings semânticos (pgvector), captura automática de eventos e sincronização bidirecional Notion ↔ Obsidian ↔ Supabase.",
+     metric:"Base de conhecimento consultável por IA"},
+    {id:3,name:"RAG vs MCP Playground",badge:"PÚBLICO",year:"2025",color:C.green,
+     stack:["React","Claude API","JavaScript","CSS"],
+     problem:"Devs confundem RAG e MCP conceitualmente. Faltava um playground funcional para experimentar as diferenças na prática com uma API real.",
+     solution:"App interativo com motor RAG local + 5 ferramentas MCP executáveis, conectado à API real do Claude com histórico de contexto persistente.",
+     metric:"Open-source · github.com/OsmarZM/Rag-Mcp",
+     github:"https://github.com/OsmarZM/Rag-Mcp"},
+    {id:4,name:"Commercial Pipeline Analytics",badge:"PRIVADO",year:"2025",color:C.pink,
+     stack:["Python","React","Bitrix24 API","PDF Generation"],
+     problem:"Leads estagnados invisíveis no CRM. Gestão sem visibilidade dos gargalos reais no funil — decisões tomadas no feeling.",
+     solution:"Relatório dark-themed com funil dinâmico, KPI cards, ranking de responsáveis por conversão e análise temporal de deals parados.",
+     metric:"Visibilidade total do funil em tempo real"},
+    {id:5,name:"IT Infrastructure Proposal",badge:"PRIVADO",year:"2025",color:C.amber,
+     stack:["Active Directory","Kaspersky","Acronis","IBM MaaS360","Microsoft 365","LGPD"],
+     problem:"Fortatech sem segurança centralizada. Risco crítico de conformidade com LGPD e ausência de gestão de dispositivos móveis.",
+     solution:"Proposta executiva com 5 soluções embasadas em casos reais de incidentes brasileiros, análise de custo-benefício e roadmap completo.",
+     metric:"Aprovação total pela diretoria"},
+    {id:6,name:"Lead Lifecycle Visualizer",badge:"PÚBLICO",year:"2025",color:"#A855F7",
+     stack:["React","CSS Animations","Hooks","JavaScript"],
+     problem:"Time comercial sem alinhamento visual sobre o ciclo de vida de leads e pontos críticos de conversão entre etapas do funil.",
+     solution:"Componente React com 6 estágios animados, métricas por etapa, ações mapeadas e drill-down interativo por clique com transições fluidas.",
+     metric:"Onboarding comercial acelerado"},
+  ];
 
-    const PROJECTS = [
-      {
-        id:1, name:"WhatsApp AI Sales Assistant", badge:"PRIVADO", year:"2025", color:C.cyan,
-        stack:["Node.js","Baileys","Meta Cloud API","Claude AI","GPT-4o","Gemini","Supabase","Bitrix24"],
-        problem:"Vendedores externos operavam 100% no celular sem acesso a sistemas. Gerar uma proposta levava horas e leads eram perdidos por falta de agilidade.",
-        solution:"Agente multi-IA com failover automático (Claude → GPT-4o → Gemini), lookup por CNPJ, lock de lead por 30 dias, geração de PDF e criação automática de card no CRM.",
-        metric:"Proposta gerada em < 2 minutos",
-      },
-      {
-        id:2, name:"Fortatech Knowledge Graph", badge:"PRIVADO", year:"2026", color:C.purple,
-        stack:["Node.js","Supabase","pgvector","Notion API","Obsidian","TypeScript"],
-        problem:"Conhecimento institucional fragmentado entre pessoas e sistemas. Onboarding lento e expertise perdida na saída de colaboradores.",
-        solution:"Plataforma de grafo vivo com embeddings semânticos (pgvector), captura automática de eventos e sincronização bidirecional Notion ↔ Obsidian ↔ Supabase.",
-        metric:"Base de conhecimento consultável por IA",
-      },
-      {
-        id:3, name:"RAG vs MCP Playground", badge:"PÚBLICO", year:"2025", color:C.green,
-        stack:["React","Claude API","JavaScript","CSS"],
-        problem:"Devs confundem RAG e MCP conceitualmente. Faltava um playground funcional para experimentar as diferenças na prática com uma API real.",
-        solution:"App interativo com motor RAG local + 5 ferramentas MCP executáveis, conectado à API real do Claude com histórico de contexto persistente.",
-        metric:"Open-source · github.com/OsmarZM/Rag-Mcp",
-        github:"https://github.com/OsmarZM/Rag-Mcp",
-      },
-      {
-        id:4, name:"Commercial Pipeline Analytics", badge:"PRIVADO", year:"2025", color:C.pink,
-        stack:["Python","React","Bitrix24 API","PDF Generation"],
-        problem:"Leads estagnados invisíveis no CRM. Gestão sem visibilidade dos gargalos reais no funil — decisões tomadas no feeling.",
-        solution:"Relatório dark-themed com funil dinâmico, KPI cards, ranking de responsáveis por conversão e análise temporal de deals parados.",
-        metric:"Visibilidade total do funil em tempo real",
-      },
-      {
-        id:5, name:"IT Infrastructure Proposal", badge:"PRIVADO", year:"2025", color:C.amber,
-        stack:["Active Directory","Kaspersky","Acronis","IBM MaaS360","Microsoft 365","LGPD"],
-        problem:"Fortatech sem segurança centralizada. Risco crítico de conformidade com LGPD e ausência de gestão de dispositivos móveis.",
-        solution:"Proposta executiva com 5 soluções embasadas em casos reais de incidentes brasileiros, análise de custo-benefício e roadmap completo.",
-        metric:"Aprovação total pela diretoria",
-      },
-      {
-        id:6, name:"Lead Lifecycle Visualizer", badge:"PÚBLICO", year:"2025", color:"#A855F7",
-        stack:["React","CSS Animations","Hooks","JavaScript"],
-        problem:"Time comercial sem alinhamento visual sobre o ciclo de vida de leads e pontos críticos de conversão entre etapas do funil.",
-        solution:"Componente React com 6 estágios animados, métricas por etapa, ações mapeadas e drill-down interativo por clique com transições fluidas.",
-        metric:"Onboarding comercial acelerado",
-      },
+  const STACK=["Node.js","React","TypeScript","Python","Supabase","PostgreSQL","pgvector","Claude AI","GPT-4o","Bitrix24 API","WhatsApp API","Notion API","Docker","REST APIs","JWT","Webhooks","LGPD","Git","Linux","Active Directory","Microsoft 365","Obsidian"];
+  const ROLES=["IA Aplicada na prática","Automação de Processos","Integração de Sistemas","RAG & MCP Architect","Full Stack Developer"];
+
+  function useIsMobile(bp=768){
+    const[m,setM]=useState(()=>typeof window!=="undefined"&&window.innerWidth<=bp);
+    useEffect(()=>{const h=()=>setM(window.innerWidth<=bp);window.addEventListener("resize",h);return()=>window.removeEventListener("resize",h);},[bp]);
+    return m;
+  }
+
+  function ParticleCanvas(){
+    const ref=useRef(null);
+    const mob=useIsMobile();
+    useEffect(()=>{
+      const canvas=ref.current;if(!canvas)return;
+      const ctx=canvas.getContext("2d");let raf;
+      const mouse={x:-9999,y:-9999};
+      const resize=()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;};
+      resize();window.addEventListener("resize",resize);
+      window.addEventListener("mousemove",e=>{mouse.x=e.clientX;mouse.y=e.clientY;});
+      const N=mob?30:70;
+      const pts=Array.from({length:N},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.1+.4,a:Math.random()*.4+.08}));
+      const draw=()=>{
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        pts.forEach(p=>{
+          const dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.hypot(dx,dy);
+          if(d<110){const f=(110-d)/110*.7;p.vx+=(dx/d)*f;p.vy+=(dy/d)*f;}
+          p.vx*=.985;p.vy*=.985;p.x+=p.vx;p.y+=p.vy;
+          if(p.x<0||p.x>canvas.width)p.vx*=-1;
+          if(p.y<0||p.y>canvas.height)p.vy*=-1;
+        });
+        for(let i=0;i<N;i++)for(let j=i+1;j<N;j++){const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);if(d<130){ctx.beginPath();ctx.strokeStyle=`rgba(0,212,255,${(1-d/130)*.065})`;ctx.lineWidth=.5;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();}}
+        pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,212,255,${p.a})`;ctx.fill();});
+        raf=requestAnimationFrame(draw);
+      };
+      draw();
+      return()=>{cancelAnimationFrame(raf);window.removeEventListener("resize",resize);};
+    },[mob]);
+    return React.createElement("canvas",{ref,style:{position:"fixed",inset:0,pointerEvents:"none",zIndex:0}});
+  }
+
+  function GlitchName({active}){
+    const base={fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:"clamp(3rem,11vw,9rem)",lineHeight:.88,letterSpacing:"-.04em",userSelect:"none"};
+    return React.createElement("div",{style:{position:"relative",display:"inline-block"}},
+      React.createElement("div",{style:base},
+        React.createElement("span",{style:{display:"block",background:`linear-gradient(135deg,${C.text} 30%,rgba(209,220,232,.55))`,WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}},"Osmar"),
+        React.createElement("span",{style:{display:"block",background:`linear-gradient(135deg,${C.cyan} 0%,#0088FF 100%)`,WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}},"ZM")
+      ),
+      active&&React.createElement(React.Fragment,null,
+        React.createElement("div",{"aria-hidden":true,style:{...base,color:C.cyan,position:"absolute",inset:0,animation:"glitchA .15s steps(1) infinite",mixBlendMode:"screen",opacity:.7}},React.createElement("span",{style:{display:"block"}},"Osmar"),React.createElement("span",{style:{display:"block"}},"ZM")),
+        React.createElement("div",{"aria-hidden":true,style:{...base,color:C.pink,position:"absolute",inset:0,animation:"glitchB .15s steps(1) infinite",mixBlendMode:"screen",opacity:.5}},React.createElement("span",{style:{display:"block"}},"Osmar"),React.createElement("span",{style:{display:"block"}},"ZM"))
+      )
+    );
+  }
+
+  function TypingText(){
+    const[display,setDisplay]=useState("");const[ri,setRi]=useState(0);const[ci,setCi]=useState(0);const[del,setDel]=useState(false);
+    useEffect(()=>{
+      const cur=ROLES[ri];
+      const t=setTimeout(()=>{
+        if(!del&&ci<cur.length){setDisplay(cur.slice(0,ci+1));setCi(c=>c+1);}
+        else if(!del&&ci===cur.length){setTimeout(()=>setDel(true),2200);}
+        else if(del&&ci>0){setDisplay(cur.slice(0,ci-1));setCi(c=>c-1);}
+        else{setDel(false);setRi(r=>(r+1)%ROLES.length);setCi(0);}
+      },del?38:88);
+      return()=>clearTimeout(t);
+    },[ci,del,ri]);
+    return React.createElement("span",{style:{color:C.text}},display,React.createElement("span",{style:{color:C.cyan,animation:"blink 1s step-end infinite"}},"▋"));
+  }
+
+  function SpotlightCard({project}){
+    const ref=useRef(null);const[spot,setSpot]=useState({x:0,y:0,on:false});
+    const onMove=useCallback(e=>{const r=ref.current?.getBoundingClientRect();if(!r)return;setSpot({x:e.clientX-r.left,y:e.clientY-r.top,on:true});},[]);
+    const onLeave=useCallback(()=>setSpot(s=>({...s,on:false})),[]);
+    const isPublic=project.badge==="PÚBLICO";
+    return React.createElement("div",{ref,onMouseMove:onMove,onMouseLeave:onLeave,className:"card-lift",style:{position:"relative",overflow:"hidden",background:C.surface,border:`1px solid ${spot.on?project.color+"28":"rgba(255,255,255,0.04)"}`,borderRadius:"16px",padding:"22px",animation:"orbitGlow 5s ease-in-out infinite",transition:"border-color .3s"}},
+      spot.on&&React.createElement("div",{style:{position:"absolute",width:"340px",height:"340px",borderRadius:"50%",background:`radial-gradient(circle,${project.color}16 0%,transparent 68%)`,left:spot.x,top:spot.y,transform:"translate(-50%,-50%)",pointerEvents:"none"}}),
+      React.createElement("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"14px"}},
+        React.createElement("span",{style:{fontSize:"9px",letterSpacing:".18em",textTransform:"uppercase",padding:"3px 9px",borderRadius:"4px",background:isPublic?"rgba(16,255,170,0.08)":"rgba(0,212,255,0.07)",color:isPublic?C.green:C.cyan,border:`1px solid ${isPublic?"rgba(16,255,170,0.18)":"rgba(0,212,255,0.15)"}`}},project.badge),
+        React.createElement("span",{style:{fontSize:"11px",color:C.muted}},project.year)
+      ),
+      React.createElement("div",{style:{width:"24px",height:"3px",background:project.color,borderRadius:"2px",marginBottom:"12px",boxShadow:`0 0 10px ${project.color}70`}}),
+      React.createElement("h3",{style:{fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:"1rem",color:C.text,letterSpacing:"-.02em",lineHeight:1.25,marginBottom:"14px"}},project.name),
+      React.createElement("div",{style:{marginBottom:"11px"}},
+        React.createElement("div",{style:{fontSize:"9px",letterSpacing:".18em",color:C.pink,textTransform:"uppercase",marginBottom:"5px"}},"// problema"),
+        React.createElement("p",{style:{fontSize:"11.5px",color:C.muted,lineHeight:1.65}},project.problem)
+      ),
+      React.createElement("div",{style:{marginBottom:"14px"}},
+        React.createElement("div",{style:{fontSize:"9px",letterSpacing:".18em",color:C.green,textTransform:"uppercase",marginBottom:"5px"}},"// solução"),
+        React.createElement("p",{style:{fontSize:"11.5px",color:C.text,lineHeight:1.65}},project.solution)
+      ),
+      React.createElement("div",{style:{padding:"8px 12px",background:`${project.color}0A`,border:`1px solid ${project.color}1E`,borderRadius:"8px",fontSize:"11.5px",color:project.color,marginBottom:"13px",fontWeight:600}},"⚡ ",project.metric),
+      React.createElement("div",{style:{display:"flex",flexWrap:"wrap",gap:"5px",marginBottom:project.github?"10px":0}},
+        project.stack.map(t=>React.createElement("span",{key:t,className:"tag-pill",style:{fontSize:"9px",padding:"2px 7px",background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:"4px",color:C.muted,letterSpacing:".04em"}},t))
+      ),
+      project.github&&React.createElement("a",{href:project.github,target:"_blank",rel:"noopener",style:{fontSize:"11px",color:C.cyan,textDecoration:"none",letterSpacing:".05em",transition:"opacity .2s"},onMouseEnter:e=>e.currentTarget.style.opacity=".65",onMouseLeave:e=>e.currentTarget.style.opacity="1"},"Ver no GitHub ↗")
+    );
+  }
+
+  function TerminalAbout(){
+    const lines=[
+      {k:"nome",v:'"Osmar Zanateli Moreno"',vc:C.text},
+      {k:"role",v:'"Developer · IA Aplicada & Automação"',vc:"#CE9178"},
+      {k:"empresa",v:'"Fortatech — Brasil"',vc:C.cyan},
+      {k:"sobre",v:'"LLMs que não só respondem — agem"',vc:"#D4A574"},
+      {k:"foco",v:'["IA Aplicada","Automação","RAG","MCP"]',vc:C.text},
+      {k:"ia_stack",v:'["Claude AI","GPT-4o","Gemini","pgvector"]',vc:C.green},
+      {k:"github",v:'"github.com/OsmarZM"',vc:C.cyan},
+      {k:"linkedin",v:'"linkedin.com/in/osmarzm"',vc:"#5B9BD5"},
+      {k:"portfolio",v:'"portfofilo-mu.vercel.app"',vc:"#A855F7"},
     ];
+    return React.createElement("div",{style:{background:C.surface,border:"1px solid rgba(0,212,255,0.1)",borderRadius:"14px",overflow:"hidden",animation:"orbitGlow 6s ease-in-out infinite"}},
+      React.createElement("div",{style:{padding:"10px 16px",borderBottom:"1px solid rgba(0,212,255,0.07)",background:"rgba(0,0,0,0.35)",display:"flex",alignItems:"center",gap:"8px"}},
+        ["#FF5F57","#FFBD2E","#28CA40"].map(c=>React.createElement("div",{key:c,style:{width:"10px",height:"10px",borderRadius:"50%",background:c,flexShrink:0}})),
+        React.createElement("span",{style:{marginLeft:"6px",fontSize:"11px",color:C.muted,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}},"bash — osmar@fortatech ~")
+      ),
+      React.createElement("div",{className:"term-body",style:{padding:"18px 22px",fontFamily:"'JetBrains Mono',monospace",fontSize:"12px",lineHeight:"2",overflowX:"auto"}},
+        React.createElement("div",{style:{display:"flex",gap:"10px"}},React.createElement("span",{style:{color:C.green}},"$"),React.createElement("span",{style:{color:C.text}},"cat about.json")),
+        React.createElement("div",{style:{color:C.muted,marginTop:"4px"}},"{"),
+        lines.map(l=>React.createElement("div",{key:l.k,style:{paddingLeft:"16px",minWidth:"max-content"}},
+          React.createElement("span",{style:{color:"#7C9EB8"}},`"${l.k}"`),
+          React.createElement("span",{style:{color:C.muted}},": "),
+          React.createElement("span",{style:{color:l.vc}},l.v),
+          React.createElement("span",{style:{color:C.muted}},",")
+        )),
+        React.createElement("div",{style:{color:C.muted}},"}"),
+        React.createElement("div",{style:{marginTop:"8px"}},React.createElement("span",{style:{color:C.green}},"$ "),React.createElement("span",{style:{animation:"blink 1s step-end infinite",color:C.cyan}},"▋"))
+      )
+    );
+  }
 
-    const STACK = [
-      "Node.js","React","TypeScript","Python","Supabase","PostgreSQL","pgvector",
-      "Claude AI","GPT-4o","Bitrix24 API","WhatsApp API","Notion API","Docker",
-      "REST APIs","JWT","Webhooks","LGPD","Git","Linux","Active Directory","Microsoft 365","Obsidian",
-    ];
+  function MobileMenu({open,onClose}){
+    if(!open)return null;
+    const links=[["Projetos","#projetos"],["Stack","#stack"],["Sobre","#sobre"],["Contato","#contato"],["GitHub","https://github.com/OsmarZM"],["LinkedIn","https://linkedin.com/in/osmarzm"]];
+    return React.createElement("div",{style:{position:"fixed",top:"60px",left:0,right:0,zIndex:190,background:"rgba(3,6,8,0.98)",backdropFilter:"blur(24px)",borderBottom:"1px solid rgba(0,212,255,0.1)",animation:"slideDown .2s ease both"}},
+      links.map(([l,h])=>React.createElement("a",{key:l,href:h,target:h.startsWith("http")?"_blank":undefined,rel:h.startsWith("http")?"noopener":undefined,onClick:onClose,
+        style:{display:"block",padding:"15px 24px",color:C.muted,textDecoration:"none",fontSize:"13px",letterSpacing:".1em",textTransform:"uppercase",borderBottom:"1px solid rgba(255,255,255,0.04)",transition:"color .2s,background .2s"},
+        onMouseEnter:e=>{e.currentTarget.style.color=C.cyan;e.currentTarget.style.background="rgba(0,212,255,0.04)"},
+        onMouseLeave:e=>{e.currentTarget.style.color=C.muted;e.currentTarget.style.background="transparent"},
+      },l))
+    );
+  }
 
-    const ROLES = ["IA Aplicada na prática","Automação de Processos","Integração de Sistemas","RAG & MCP Architect","Full Stack Developer"];
+  function App(){
+    const[glitch,setGlitch]=useState(false);
+    const[menu,setMenu]=useState(false);
+    useEffect(()=>{const id=setInterval(()=>{setGlitch(true);setTimeout(()=>setGlitch(false),320);},6000);return()=>clearInterval(id);},[]);
 
-    function ParticleCanvas() {
-      const ref = useRef(null);
-      useEffect(() => {
-        const canvas = ref.current; if(!canvas) return;
-        const ctx = canvas.getContext("2d");
-        let raf;
-        const mouse={x:-9999,y:-9999};
-        const resize=()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;};
-        resize(); window.addEventListener("resize",resize);
-        const onM=e=>{mouse.x=e.clientX;mouse.y=e.clientY;};
-        window.addEventListener("mousemove",onM);
-        const N=70;
-        const pts=Array.from({length:N},()=>({
-          x:Math.random()*canvas.width, y:Math.random()*canvas.height,
-          vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35,
-          r:Math.random()*1.1+.4, a:Math.random()*.45+.08,
-        }));
-        const draw=()=>{
-          ctx.clearRect(0,0,canvas.width,canvas.height);
-          pts.forEach(p=>{
-            const dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.hypot(dx,dy);
-            if(d<110){const f=(110-d)/110*.7;p.vx+=(dx/d)*f;p.vy+=(dy/d)*f;}
-            p.vx*=.985;p.vy*=.985;p.x+=p.vx;p.y+=p.vy;
-            if(p.x<0||p.x>canvas.width)p.vx*=-1;
-            if(p.y<0||p.y>canvas.height)p.vy*=-1;
-          });
-          for(let i=0;i<N;i++) for(let j=i+1;j<N;j++){
-            const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);
-            if(d<130){ctx.beginPath();ctx.strokeStyle=`rgba(0,212,255,${(1-d/130)*.065})`;ctx.lineWidth=.5;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();}
-          }
-          pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,212,255,${p.a})`;ctx.fill();});
-          raf=requestAnimationFrame(draw);
-        };
-        draw();
-        return()=>{cancelAnimationFrame(raf);window.removeEventListener("resize",resize);window.removeEventListener("mousemove",onM);};
-      },[]);
-      return React.createElement("canvas",{ref,style:{position:"fixed",inset:0,pointerEvents:"none",zIndex:0}});
-    }
+    const SLabel=({num,label})=>React.createElement("div",{style:{fontSize:"10px",letterSpacing:".28em",color:C.cyan,textTransform:"uppercase",marginBottom:"12px",fontFamily:"'JetBrains Mono',monospace"}},`// ${num} — ${label}`);
+    const STitle=({children})=>React.createElement("h2",{style:{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:"clamp(1.8rem,5vw,3.5rem)",letterSpacing:"-.03em",color:C.text,lineHeight:1.1}},children);
 
-    function GlitchName({active}) {
-      const base={fontFamily:"'Syne', sans-serif",fontWeight:800,fontSize:"clamp(4rem,11vw,9rem)",lineHeight:.88,letterSpacing:"-.04em",userSelect:"none"};
-      return React.createElement("div",{style:{position:"relative",display:"inline-block"}},
-        React.createElement("div",{style:base},
-          React.createElement("span",{style:{display:"block",background:`linear-gradient(135deg,${C.text} 30%,rgba(209,220,232,.55))`,WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}},"Osmar"),
-          React.createElement("span",{style:{display:"block",background:`linear-gradient(135deg,${C.cyan} 0%,#0088FF 100%)`,WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}},"ZM")
-        ),
-        active && React.createElement(React.Fragment,null,
-          React.createElement("div",{"aria-hidden":true,style:{...base,color:C.cyan,position:"absolute",inset:0,animation:"glitchA .15s steps(1) infinite",mixBlendMode:"screen",opacity:.7}},
-            React.createElement("span",{style:{display:"block"}},"Osmar"),
-            React.createElement("span",{style:{display:"block"}},"ZM")
-          ),
-          React.createElement("div",{"aria-hidden":true,style:{...base,color:C.pink,position:"absolute",inset:0,animation:"glitchB .15s steps(1) infinite",mixBlendMode:"screen",opacity:.5}},
-            React.createElement("span",{style:{display:"block"}},"Osmar"),
-            React.createElement("span",{style:{display:"block"}},"ZM")
-          )
+    return React.createElement("div",{style:{background:C.bg,color:C.text,minHeight:"100vh",overflowX:"hidden"}},
+      React.createElement(ParticleCanvas),
+      React.createElement("div",{style:{position:"fixed",inset:0,pointerEvents:"none",zIndex:1,background:"repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.025) 3px,rgba(0,0,0,0.025) 4px)",animation:"scanPulse 8s ease-in-out infinite"}}),
+      React.createElement("div",{style:{position:"fixed",top:"15%",left:"50%",transform:"translateX(-50%)",width:"min(700px,100vw)",height:"450px",background:"radial-gradient(ellipse,rgba(0,212,255,0.025) 0%,transparent 70%)",pointerEvents:"none",zIndex:1}}),
+
+      /* NAV */
+      React.createElement("nav",{className:"nav-bar",style:{position:"fixed",top:0,left:0,right:0,zIndex:200,padding:"0 40px",height:"60px",display:"flex",alignItems:"center",justifyContent:"space-between",backdropFilter:"blur(24px) saturate(180%)",background:"rgba(3,6,8,0.82)",borderBottom:"1px solid rgba(0,212,255,0.07)"}},
+        React.createElement("a",{href:"#",style:{textDecoration:"none"}},
+          React.createElement("div",{style:{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:"18px",letterSpacing:"-.04em",color:C.cyan}},"OZ",React.createElement("span",{style:{color:"rgba(209,220,232,0.4)"}},"."))),
+        React.createElement("div",{className:"nav-links",style:{display:"flex",gap:"28px"}},
+          ["Projetos","Stack","Sobre","Contato"].map(l=>React.createElement("a",{key:l,href:`#${l.toLowerCase()}`,className:"nav-link"},l))),
+        React.createElement("div",{style:{display:"flex",gap:"8px",alignItems:"center"}},
+          React.createElement("a",{href:"https://linkedin.com/in/osmarzm",target:"_blank",rel:"noopener",className:"nav-gh btn-ghost",style:{padding:"7px 14px",border:"1px solid rgba(91,155,213,0.3)",borderRadius:"7px",color:"#5B9BD5",textDecoration:"none",fontSize:"11px",letterSpacing:".08em",background:"rgba(91,155,213,0.04)"}},"in"),
+          React.createElement("a",{href:"https://github.com/OsmarZM",target:"_blank",rel:"noopener",className:"nav-gh btn-ghost",style:{padding:"7px 14px",border:"1px solid rgba(0,212,255,0.22)",borderRadius:"7px",color:C.cyan,textDecoration:"none",fontSize:"11px",letterSpacing:".08em",background:"rgba(0,212,255,0.04)"}},"GitHub ↗"),
+          React.createElement("button",{className:"ham-btn",onClick:()=>setMenu(o=>!o),"aria-label":"menu"},menu?"✕":"☰")
         )
-      );
-    }
+      ),
+      React.createElement(MobileMenu,{open:menu,onClose:()=>setMenu(false)}),
 
-    function TypingText() {
-      const [display,setDisplay]=useState("");
-      const [ri,setRi]=useState(0);
-      const [ci,setCi]=useState(0);
-      const [del,setDel]=useState(false);
-      useEffect(()=>{
-        const cur=ROLES[ri];
-        const t=setTimeout(()=>{
-          if(!del&&ci<cur.length){setDisplay(cur.slice(0,ci+1));setCi(c=>c+1);}
-          else if(!del&&ci===cur.length){setTimeout(()=>setDel(true),2200);}
-          else if(del&&ci>0){setDisplay(cur.slice(0,ci-1));setCi(c=>c-1);}
-          else{setDel(false);setRi(r=>(r+1)%ROLES.length);setCi(0);}
-        },del?38:88);
-        return()=>clearTimeout(t);
-      },[ci,del,ri]);
-      return React.createElement("span",{style:{color:C.text}},
-        display,
-        React.createElement("span",{style:{color:C.cyan,animation:"blink 1s step-end infinite"}},"▋")
-      );
-    }
-
-    function SpotlightCard({project}) {
-      const ref=useRef(null);
-      const [spot,setSpot]=useState({x:0,y:0,on:false});
-      const onMove=useCallback(e=>{
-        const r=ref.current?.getBoundingClientRect();
-        if(!r)return;
-        setSpot({x:e.clientX-r.left,y:e.clientY-r.top,on:true});
-      },[]);
-      const onLeave=useCallback(()=>setSpot(s=>({...s,on:false})),[]);
-      const isPublic=project.badge==="PÚBLICO";
-      return React.createElement("div",{
-        ref, onMouseMove:onMove, onMouseLeave:onLeave,
-        className:"card-lift",
-        style:{
-          position:"relative",overflow:"hidden",background:C.surface,
-          border:`1px solid ${spot.on?project.color+"28":"rgba(255,255,255,0.04)"}`,
-          borderRadius:"16px",padding:"28px",
-          animation:"orbitGlow 5s ease-in-out infinite",
-          transition:"border-color .3s",
-        }
-      },
-        spot.on && React.createElement("div",{style:{
-          position:"absolute",width:"380px",height:"380px",borderRadius:"50%",
-          background:`radial-gradient(circle,${project.color}16 0%,transparent 68%)`,
-          left:spot.x,top:spot.y,transform:"translate(-50%,-50%)",pointerEvents:"none",
-        }}),
-        React.createElement("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"18px"}},
-          React.createElement("span",{style:{
-            fontSize:"9px",letterSpacing:".18em",textTransform:"uppercase",padding:"3px 9px",
-            borderRadius:"4px",
-            background:isPublic?"rgba(16,255,170,0.08)":"rgba(0,212,255,0.07)",
-            color:isPublic?C.green:C.cyan,
-            border:`1px solid ${isPublic?"rgba(16,255,170,0.18)":"rgba(0,212,255,0.15)"}`,
-          }},project.badge),
-          React.createElement("span",{style:{fontSize:"11px",color:C.muted,fontFamily:"'JetBrains Mono',monospace"}},project.year)
+      /* HERO */
+      React.createElement("section",{className:"hero-sec",style:{position:"relative",zIndex:2,minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"80px 40px 0",textAlign:"center"}},
+        React.createElement("div",{style:{display:"inline-flex",alignItems:"center",gap:"8px",padding:"6px 16px",borderRadius:"20px",border:"1px solid rgba(0,212,255,0.2)",background:"rgba(0,212,255,0.05)",marginBottom:"30px",animation:"fadeIn .9s ease both"}},
+          React.createElement("div",{style:{width:"6px",height:"6px",borderRadius:"50%",background:C.green,boxShadow:`0 0 6px ${C.green}`,flexShrink:0}}),
+          React.createElement("span",{style:{fontSize:"10px",letterSpacing:".18em",textTransform:"uppercase",color:C.cyan}},"Osmar Zanateli · Fortatech · Brasil")
         ),
-        React.createElement("div",{style:{width:"28px",height:"3px",background:project.color,borderRadius:"2px",marginBottom:"14px",boxShadow:`0 0 10px ${project.color}70`}}),
-        React.createElement("h3",{style:{fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:"1.15rem",color:C.text,letterSpacing:"-.02em",lineHeight:1.25,marginBottom:"18px"}},project.name),
-        React.createElement("div",{style:{marginBottom:"14px"}},
-          React.createElement("div",{style:{fontSize:"9px",letterSpacing:".18em",color:C.pink,textTransform:"uppercase",marginBottom:"5px",fontFamily:"'JetBrains Mono',monospace"}},"// problema"),
-          React.createElement("p",{style:{fontSize:"12.5px",color:C.muted,lineHeight:1.65}},project.problem)
+        React.createElement("div",{style:{animation:"fadeUp .8s .15s ease both"}},React.createElement(GlitchName,{active:glitch})),
+        React.createElement("div",{style:{marginTop:"20px",marginBottom:"36px",fontSize:"clamp(.9rem,2.2vw,1.3rem)",color:C.muted,animation:"fadeUp .8s .35s ease both"}},
+          React.createElement("span",{style:{color:C.green}},"~/ "),React.createElement(TypingText)),
+        React.createElement("div",{className:"hero-btns",style:{display:"flex",gap:"12px",flexWrap:"wrap",justifyContent:"center",animation:"fadeUp .8s .55s ease both",width:"100%",maxWidth:"380px"}},
+          React.createElement("a",{href:"#projetos",className:"btn-primary",style:{flex:1,minWidth:"130px",padding:"13px 22px",background:C.cyan,color:C.bg,textDecoration:"none",borderRadius:"8px",fontWeight:700,fontSize:"12px",letterSpacing:".06em",boxShadow:"0 0 32px rgba(0,212,255,0.32)"}},"Ver Projetos →"),
+          React.createElement("a",{href:"https://linkedin.com/in/osmarzm",target:"_blank",rel:"noopener",className:"btn-ghost",style:{flex:1,minWidth:"130px",padding:"13px 22px",border:"1px solid rgba(91,155,213,0.35)",color:"#5B9BD5",textDecoration:"none",borderRadius:"8px",fontSize:"12px",letterSpacing:".06em",background:"rgba(91,155,213,0.05)"}},"LinkedIn ↗")
         ),
-        React.createElement("div",{style:{marginBottom:"18px"}},
-          React.createElement("div",{style:{fontSize:"9px",letterSpacing:".18em",color:C.green,textTransform:"uppercase",marginBottom:"5px",fontFamily:"'JetBrains Mono',monospace"}},"// solução"),
-          React.createElement("p",{style:{fontSize:"12.5px",color:C.text,lineHeight:1.65}},project.solution)
-        ),
-        React.createElement("div",{style:{
-          padding:"9px 14px",background:`${project.color}0A`,border:`1px solid ${project.color}1E`,
-          borderRadius:"8px",fontSize:"12px",color:project.color,marginBottom:"16px",
-          fontWeight:600,fontFamily:"'JetBrains Mono',monospace",
-        }},"⚡ ",project.metric),
-        React.createElement("div",{style:{display:"flex",flexWrap:"wrap",gap:"5px",marginBottom:project.github?"12px":0}},
-          project.stack.map(t=>React.createElement("span",{key:t,className:"tag-pill",style:{
-            fontSize:"9.5px",padding:"2px 7px",background:"rgba(255,255,255,0.03)",
-            border:"1px solid rgba(255,255,255,0.07)",borderRadius:"4px",color:C.muted,
-            letterSpacing:".04em",fontFamily:"'JetBrains Mono',monospace",
-          }},t))
-        ),
-        project.github && React.createElement("a",{href:project.github,target:"_blank",rel:"noopener",
-          style:{fontSize:"11px",color:C.cyan,textDecoration:"none",letterSpacing:".05em",
-          display:"inline-flex",alignItems:"center",gap:"4px",
-          fontFamily:"'JetBrains Mono',monospace",transition:"opacity .2s"},
-          onMouseEnter:e=>e.currentTarget.style.opacity=".65",
-          onMouseLeave:e=>e.currentTarget.style.opacity="1",
-        },"Ver no GitHub ↗")
-      );
-    }
-
-    function TerminalAbout() {
-      const lines=[
-        {k:"nome",v:'"Osmar Zanateli Moreno"',vc:C.text},
-        {k:"role",v:'"Developer · IA Aplicada & Automação"',vc:"#CE9178"},
-        {k:"empresa",v:'"Fortatech — Brasil"',vc:C.cyan},
-        {k:"foco",v:'["AI Integration", "CRM Systems", "IT Infra", "Data Architecture"]',vc:C.text},
-        {k:"stack_core",v:'["Node.js", "React", "Supabase", "TypeScript", "Python"]',vc:C.text},
-        {k:"ia_stack",v:'["Claude AI", "GPT-4o", "Gemini", "pgvector", "RAG", "MCP"]',vc:C.green},
-        {k:"filosofia",v:'"Entender o porquê antes do como"',vc:"#F59E0B"},
-        {k:"github",v:'"github.com/OsmarZM"',vc:C.cyan},{k:"instagram",v:'"@osmar.zanateli"',vc:C.purple},
-      ];
-      return React.createElement("div",{style:{
-        background:C.surface,border:"1px solid rgba(0,212,255,0.1)",
-        borderRadius:"14px",overflow:"hidden",animation:"orbitGlow 6s ease-in-out infinite",
-      }},
-        React.createElement("div",{style:{
-          padding:"10px 16px",borderBottom:"1px solid rgba(0,212,255,0.07)",
-          background:"rgba(0,0,0,0.35)",display:"flex",alignItems:"center",gap:"8px",
-        }},
-          ["#FF5F57","#FFBD2E","#28CA40"].map(c=>React.createElement("div",{key:c,style:{width:"10px",height:"10px",borderRadius:"50%",background:c}})),
-          React.createElement("span",{style:{marginLeft:"6px",fontSize:"11.5px",color:C.muted,fontFamily:"'JetBrains Mono',monospace"}},"bash — osmar@fortatech ~")
-        ),
-        React.createElement("div",{style:{padding:"24px 28px",fontFamily:"'JetBrains Mono',monospace",fontSize:"12.5px",lineHeight:"2.1"}},
-          React.createElement("div",{style:{display:"flex",gap:"10px"}},
-            React.createElement("span",{style:{color:C.green}},"$"),
-            React.createElement("span",{style:{color:C.text}},"cat about.json")
-          ),
-          React.createElement("div",{style:{color:C.muted,marginTop:"6px"}},"{"),
-          lines.map(l=>React.createElement("div",{key:l.k,style:{paddingLeft:"22px"}},
-            React.createElement("span",{style:{color:"#7C9EB8"}},`"${l.k}"`),
-            React.createElement("span",{style:{color:C.muted}},": "),
-            React.createElement("span",{style:{color:l.vc}},l.v),
-            React.createElement("span",{style:{color:C.muted}},",")
-          )),
-          React.createElement("div",{style:{color:C.muted}},"}"),
-          React.createElement("div",{style:{marginTop:"14px"}},
-            React.createElement("span",{style:{color:C.green}},"$ "),
-            React.createElement("span",{style:{animation:"blink 1s step-end infinite",color:C.cyan}},"▋")
-          )
+        React.createElement("div",{className:"hero-stats",style:{display:"flex",gap:"32px",flexWrap:"wrap",justifyContent:"center",marginTop:"60px",animation:"fadeUp .8s .75s ease both"}},
+          [{n:"6+",l:"Sistemas"},{n:"3",l:"IAs integradas"},{n:"2+",l:"Anos AI/Node"},{n:"∞",l:"Problemas resolvidos"}].map(s=>
+            React.createElement("div",{key:s.n,style:{textAlign:"center"}},
+              React.createElement("div",{className:"stat-n",style:{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:"2rem",color:C.cyan,lineHeight:1,letterSpacing:"-.04em"}},s.n),
+              React.createElement("div",{style:{fontSize:"10px",color:C.muted,marginTop:"4px",letterSpacing:".06em",textTransform:"uppercase"}},s.l)))),
+        React.createElement("div",{style:{position:"absolute",bottom:"28px",display:"flex",flexDirection:"column",alignItems:"center",gap:"8px",animation:"fadeIn 1s 1.2s ease both"}},
+          React.createElement("div",{style:{width:"1px",height:"38px",background:`linear-gradient(${C.cyan},transparent)`}}),
+          React.createElement("span",{style:{fontSize:"9px",letterSpacing:".25em",textTransform:"uppercase",color:C.muted}},"scroll")
         )
-      );
-    }
+      ),
 
-    function App() {
-      const [glitch,setGlitch]=useState(false);
-      useEffect(()=>{
-        const id=setInterval(()=>{setGlitch(true);setTimeout(()=>setGlitch(false),320);},6000);
-        return()=>clearInterval(id);
-      },[]);
-
-      const SLabel=({num,label})=>React.createElement("div",{style:{fontSize:"10.5px",letterSpacing:".28em",color:C.cyan,textTransform:"uppercase",marginBottom:"14px",fontFamily:"'JetBrains Mono',monospace"}},`// ${num} — ${label}`);
-      const STitle=({children})=>React.createElement("h2",{style:{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:"clamp(2rem,5vw,3.5rem)",letterSpacing:"-.03em",color:C.text,lineHeight:1.1}},children);
-
-      return React.createElement("div",{style:{background:C.bg,color:C.text,minHeight:"100vh",overflowX:"hidden",fontFamily:"'JetBrains Mono',monospace"}},
-        React.createElement(ParticleCanvas),
-        // Scanline
-        React.createElement("div",{style:{position:"fixed",inset:0,pointerEvents:"none",zIndex:1,background:"repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.025) 3px,rgba(0,0,0,0.025) 4px)",animation:"scanPulse 8s ease-in-out infinite"}}),
-        // Glow center
-        React.createElement("div",{style:{position:"fixed",top:"15%",left:"50%",transform:"translateX(-50%)",width:"800px",height:"500px",background:"radial-gradient(ellipse,rgba(0,212,255,0.028) 0%,transparent 70%)",pointerEvents:"none",zIndex:1}}),
-
-        // NAV
-        React.createElement("nav",{style:{position:"fixed",top:0,left:0,right:0,zIndex:200,padding:"0 40px",height:"60px",display:"flex",alignItems:"center",justifyContent:"space-between",backdropFilter:"blur(24px) saturate(180%)",background:"rgba(3,6,8,0.82)",borderBottom:"1px solid rgba(0,212,255,0.07)"}},
-          React.createElement("a",{href:"#",style:{textDecoration:"none"}},
-            React.createElement("div",{style:{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:"18px",letterSpacing:"-.04em",color:C.cyan}},"OZ",React.createElement("span",{style:{color:"rgba(209,220,232,0.4)"}},".")),
-          ),
-          React.createElement("div",{style:{display:"flex",gap:"28px"}},
-            ["Projetos","Stack","Sobre","Contato"].map(l=>React.createElement("a",{key:l,href:`#${l.toLowerCase()}`,className:"nav-link"},l))
-          ),
-          React.createElement("a",{href:"https://github.com/OsmarZM",target:"_blank",rel:"noopener",className:"btn-ghost",style:{padding:"7px 18px",border:"1px solid rgba(0,212,255,0.22)",borderRadius:"7px",color:C.cyan,textDecoration:"none",fontSize:"11px",letterSpacing:".08em",background:"rgba(0,212,255,0.04)"}},"GitHub ↗")
+      /* PROJECTS */
+      React.createElement("section",{id:"projetos",className:"sec-pad",style:{position:"relative",zIndex:2,padding:"96px 40px 72px",maxWidth:"1400px",margin:"0 auto"}},
+        React.createElement("div",{style:{marginBottom:"48px"}},
+          React.createElement(SLabel,{num:"01",label:"Projetos"}),
+          React.createElement(STitle,null,"Problemas Resolvidos"),
+          React.createElement("p",{style:{color:C.muted,marginTop:"12px",maxWidth:"440px",lineHeight:1.7,fontSize:"12.5px"}},"Sistemas construídos para resolver problemas reais. Privados por confidencialidade — documentados pela solução.")
         ),
+        React.createElement("div",{className:"proj-grid",style:{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(340px,1fr))",gap:"16px"}},
+          PROJECTS.map(p=>React.createElement(SpotlightCard,{key:p.id,project:p})))
+      ),
 
-        // HERO
-        React.createElement("section",{style:{position:"relative",zIndex:2,minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"0 40px",textAlign:"center"}},
-          React.createElement("div",{style:{display:"inline-flex",alignItems:"center",gap:"8px",padding:"6px 16px",borderRadius:"20px",border:"1px solid rgba(0,212,255,0.2)",background:"rgba(0,212,255,0.05)",marginBottom:"36px",animation:"fadeIn .9s ease both"}},
-            React.createElement("div",{style:{width:"6px",height:"6px",borderRadius:"50%",background:C.green,boxShadow:`0 0 6px ${C.green}`}}),
-            React.createElement("span",{style:{fontSize:"10px",letterSpacing:".22em",textTransform:"uppercase",color:C.cyan}},"Osmar Zanateli · Fortatech · Brasil")
-          ),
-          React.createElement("div",{style:{animation:"fadeUp .8s .15s ease both"}},React.createElement(GlitchName,{active:glitch})),
-          React.createElement("div",{style:{marginTop:"24px",marginBottom:"48px",fontSize:"clamp(.95rem,2.2vw,1.3rem)",color:C.muted,animation:"fadeUp .8s .35s ease both"}},
-            React.createElement("span",{style:{color:C.green}},"~/ "),
-            React.createElement(TypingText)
-          ),
-          React.createElement("div",{style:{display:"flex",gap:"14px",flexWrap:"wrap",justifyContent:"center",animation:"fadeUp .8s .55s ease both"}},
-            React.createElement("a",{href:"#projetos",className:"btn-primary",style:{padding:"13px 30px",background:C.cyan,color:C.bg,textDecoration:"none",borderRadius:"8px",fontWeight:700,fontSize:"12px",letterSpacing:".06em",boxShadow:"0 0 32px rgba(0,212,255,0.32)"}},"Ver Projetos →"),
-            React.createElement("a",{href:"https://github.com/OsmarZM",target:"_blank",rel:"noopener",className:"btn-ghost",style:{padding:"13px 30px",border:"1px solid rgba(0,212,255,0.2)",color:C.text,textDecoration:"none",borderRadius:"8px",fontSize:"12px",letterSpacing:".06em",background:"rgba(0,212,255,0.04)"}},"GitHub ↗")
-          ),
-          React.createElement("div",{style:{display:"flex",gap:"40px",flexWrap:"wrap",justifyContent:"center",marginTop:"72px",animation:"fadeUp .8s .75s ease both"}},
-            [{n:"6+",l:"Sistemas construídos"},{n:"3",l:"IAs integradas"},{n:"2+",l:"Anos com AI/Node"},{n:"∞",l:"Problemas resolvidos"}].map(s=>
-              React.createElement("div",{key:s.n,style:{textAlign:"center"}},
-                React.createElement("div",{style:{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:"2rem",color:C.cyan,lineHeight:1,letterSpacing:"-.04em"}},s.n),
-                React.createElement("div",{style:{fontSize:"10px",color:C.muted,marginTop:"4px",letterSpacing:".08em",textTransform:"uppercase"}},s.l)
-              )
-            )
-          ),
-          React.createElement("div",{style:{position:"absolute",bottom:"36px",display:"flex",flexDirection:"column",alignItems:"center",gap:"8px",animation:"fadeIn 1s 1.2s ease both"}},
-            React.createElement("div",{style:{width:"1px",height:"44px",background:`linear-gradient(${C.cyan},transparent)`}}),
-            React.createElement("span",{style:{fontSize:"9px",letterSpacing:".25em",textTransform:"uppercase",color:C.muted}},"scroll")
-          )
+      /* STACK */
+      React.createElement("section",{id:"stack",style:{position:"relative",zIndex:2,padding:"68px 0",borderTop:"1px solid rgba(0,212,255,0.06)",borderBottom:"1px solid rgba(0,212,255,0.06)",overflow:"hidden"}},
+        React.createElement("div",{className:"stack-pad",style:{padding:"0 40px",marginBottom:"32px"}},
+          React.createElement(SLabel,{num:"02",label:"Stack"}),
+          React.createElement(STitle,null,"Tecnologias")),
+        React.createElement("div",{style:{overflow:"hidden",marginBottom:"10px"}},
+          React.createElement("div",{style:{display:"flex",gap:"10px",animation:"marquee 22s linear infinite",width:"max-content"}},
+            [...STACK,...STACK].map((t,i)=>React.createElement("div",{key:i,style:{padding:"8px 16px",border:"1px solid rgba(0,212,255,0.11)",borderRadius:"8px",background:"rgba(0,212,255,0.03)",color:C.text,fontSize:"12px",whiteSpace:"nowrap",letterSpacing:".04em",flexShrink:0}},t)))),
+        React.createElement("div",{style:{overflow:"hidden"}},
+          React.createElement("div",{style:{display:"flex",gap:"10px",animation:"marquee 28s linear infinite reverse",width:"max-content"}},
+            [...STACK.slice(11),...STACK,...STACK.slice(0,11)].map((t,i)=>React.createElement("div",{key:i,style:{padding:"8px 16px",border:"1px solid rgba(139,92,246,0.1)",borderRadius:"8px",background:"rgba(139,92,246,0.03)",color:C.muted,fontSize:"12px",whiteSpace:"nowrap",letterSpacing:".04em",flexShrink:0}},t))))
+      ),
+
+      /* ABOUT */
+      React.createElement("section",{id:"sobre",className:"sec-sym",style:{position:"relative",zIndex:2,padding:"96px 40px",maxWidth:"900px",margin:"0 auto"}},
+        React.createElement(SLabel,{num:"03",label:"Sobre"}),
+        React.createElement(STitle,null,"whoami"),
+        React.createElement("p",{style:{marginTop:"14px",marginBottom:"26px",fontSize:"13.5px",lineHeight:1.8,color:C.muted,maxWidth:"640px"}},
+          React.createElement("span",{style:{color:C.text}},"Osmar Zanateli Moreno"),
+          " — desenvolvedor focado em ",
+          React.createElement("span",{style:{color:C.cyan}},"IA aplicada"),
+          ", integrações e automação. Constrói sistemas onde ",
+          React.createElement("span",{style:{color:C.green}},"contexto e execução se unem"),
+          ": LLMs que não só respondem, mas agem e automatizam tarefas reais."
         ),
-
-        // PROJECTS
-        React.createElement("section",{id:"projetos",style:{position:"relative",zIndex:2,padding:"100px 40px 80px",maxWidth:"1400px",margin:"0 auto"}},
-          React.createElement("div",{style:{marginBottom:"60px"}},
-            React.createElement(SLabel,{num:"01",label:"Projetos"}),
-            React.createElement(STitle,null,"Problemas Resolvidos"),
-            React.createElement("p",{style:{color:C.muted,marginTop:"14px",maxWidth:"480px",lineHeight:1.7,fontSize:"13px"}},"Sistemas construídos para resolver problemas reais em produção. Privados por confidencialidade — documentados pela solução.")
-          ),
-          React.createElement("div",{style:{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(380px,1fr))",gap:"20px"}},
-            PROJECTS.map(p=>React.createElement(SpotlightCard,{key:p.id,project:p}))
-          )
-        ),
-
-        // STACK
-        React.createElement("section",{id:"stack",style:{position:"relative",zIndex:2,padding:"80px 0",borderTop:"1px solid rgba(0,212,255,0.06)",borderBottom:"1px solid rgba(0,212,255,0.06)",overflow:"hidden"}},
-          React.createElement("div",{style:{padding:"0 40px",marginBottom:"44px"}},
-            React.createElement(SLabel,{num:"02",label:"Stack"}),
-            React.createElement(STitle,null,"Tecnologias")
-          ),
-          React.createElement("div",{style:{overflow:"hidden",marginBottom:"12px"}},
-            React.createElement("div",{style:{display:"flex",gap:"12px",animation:"marquee 22s linear infinite",width:"max-content"}},
-              [...STACK,...STACK].map((t,i)=>React.createElement("div",{key:i,style:{padding:"9px 18px",border:"1px solid rgba(0,212,255,0.11)",borderRadius:"8px",background:"rgba(0,212,255,0.03)",color:C.text,fontSize:"12.5px",whiteSpace:"nowrap",letterSpacing:".04em",flexShrink:0}},t))
-            )
-          ),
-          React.createElement("div",{style:{overflow:"hidden"}},
-            React.createElement("div",{style:{display:"flex",gap:"12px",animation:"marquee 28s linear infinite reverse",width:"max-content"}},
-              [...STACK.slice(11),...STACK,...STACK.slice(0,11)].map((t,i)=>React.createElement("div",{key:i,style:{padding:"9px 18px",border:"1px solid rgba(139,92,246,0.1)",borderRadius:"8px",background:"rgba(139,92,246,0.03)",color:C.muted,fontSize:"12.5px",whiteSpace:"nowrap",letterSpacing:".04em",flexShrink:0}},t))
-            )
-          )
-        ),
-
-        // ABOUT
-        React.createElement("section",{id:"sobre",style:{position:"relative",zIndex:2,padding:"100px 40px",maxWidth:"900px",margin:"0 auto"}},
-          React.createElement(SLabel,{num:"03",label:"Sobre"}),
-          React.createElement(STitle,null,"whoami"),
-          React.createElement("div",{style:{marginTop:"36px"}},React.createElement(TerminalAbout)),
-          React.createElement("div",{style:{marginTop:"48px",display:"grid",gridTemplateColumns:"1fr 1fr",gap:"16px"}},
-            [
-              {icon:"🤖",title:"AI-First",desc:"Sistemas que pensam. Multi-agente, failover, RAG e MCP em produção real."},
-              {icon:"🏗️",title:"Architecture",desc:"Entendo o sistema antes de escrever a primeira linha de código."},
-              {icon:"🔗",title:"Integrations",desc:"Bitrix24, WhatsApp, Notion, Supabase — APIs como lego funcional."},
-              {icon:"🔒",title:"Infra & LGPD",desc:"Segurança, conformidade e gestão de dispositivos com contexto real."},
-            ].map(c=>React.createElement("div",{key:c.title,style:{padding:"20px",background:C.surface,border:"1px solid rgba(0,212,255,0.07)",borderRadius:"12px"}},
-              React.createElement("div",{style:{fontSize:"22px",marginBottom:"10px"}},c.icon),
-              React.createElement("div",{style:{fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:".95rem",color:C.text,marginBottom:"6px"}},c.title),
-              React.createElement("div",{style:{fontSize:"12px",color:C.muted,lineHeight:1.6}},c.desc)
-            ))
-          )
-        ),
-
-        // CONTACT
-        React.createElement("section",{id:"contato",style:{position:"relative",zIndex:2,padding:"80px 40px 100px",textAlign:"center",borderTop:"1px solid rgba(0,212,255,0.06)"}},
-          React.createElement(SLabel,{num:"04",label:"Contato"}),
-          React.createElement(STitle,null,React.createElement(React.Fragment,null,"Vamos Construir",React.createElement("br"),"algo juntos.")),
-          React.createElement("p",{style:{color:C.muted,fontSize:"13px",marginTop:"14px",marginBottom:"40px"}},"Aberto a projetos interessantes, colaborações e oportunidades."),
-          React.createElement("div",{style:{display:"flex",gap:"14px",justifyContent:"center",flexWrap:"wrap"}},
-            React.createElement("a",{href:"https://github.com/OsmarZM",target:"_blank",rel:"noopener",className:"btn-primary",style:{padding:"13px 30px",background:C.cyan,color:C.bg,textDecoration:"none",borderRadius:"8px",fontWeight:700,fontSize:"12px",letterSpacing:".06em",boxShadow:"0 0 32px rgba(0,212,255,0.3)"}},"GitHub ↗"),
-            React.createElement("a",{href:"mailto:osmar@fortatech.com.br",className:"btn-ghost",style:{padding:"13px 30px",border:"1px solid rgba(0,212,255,0.2)",color:C.text,textDecoration:"none",borderRadius:"8px",fontSize:"12px",letterSpacing:".06em",background:"rgba(0,212,255,0.04)"}},"Email →")
-          ),
-          React.createElement("div",{style:{marginTop:"80px",paddingTop:"24px",borderTop:"1px solid rgba(255,255,255,0.04)",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"12px"}},
-            React.createElement("span",{style:{color:C.muted,fontSize:"11px",letterSpacing:".08em"}},"© 2026 Osmar ZM"),
-            React.createElement("span",{style:{color:C.muted,fontSize:"11px"}},"Construído com ",React.createElement("span",{style:{color:C.cyan}},"React")," · Dark Side Only"),
-            React.createElement("a",{href:"https://github.com/OsmarZM",target:"_blank",rel:"noopener",style:{color:C.cyan,textDecoration:"none",fontSize:"11px",letterSpacing:".06em"}},"github.com/OsmarZM ↗")
-          )
+        React.createElement(TerminalAbout),
+        React.createElement("div",{className:"about-grid",style:{marginTop:"28px",display:"grid",gridTemplateColumns:"1fr 1fr",gap:"12px"}},
+          [{icon:"🤖",title:"IA Aplicada",desc:"RAG, MCP e arquiteturas multi-agente com failover. LLMs que agem, não só respondem."},
+           {icon:"🔗",title:"Integrações",desc:"Bitrix24, WhatsApp, Notion, Supabase — conectando plataformas de forma que faça sentido."},
+           {icon:"⚙️",title:"Automação",desc:"Processos manuais viram fluxos automáticos. Foco em eficiência com resultado mensurável."},
+           {icon:"🏗️",title:"Orientado a Resultado",desc:"Entender o problema real antes de escrever a primeira linha de código."}
+          ].map(c=>React.createElement("div",{key:c.title,style:{padding:"18px",background:C.surface,border:"1px solid rgba(0,212,255,0.07)",borderRadius:"12px"}},
+            React.createElement("div",{style:{fontSize:"20px",marginBottom:"8px"}},c.icon),
+            React.createElement("div",{style:{fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:".88rem",color:C.text,marginBottom:"5px"}},c.title),
+            React.createElement("div",{style:{fontSize:"11.5px",color:C.muted,lineHeight:1.65}},c.desc)))
         )
-      );
-    }
+      ),
 
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(React.createElement(App));
-  </script>
+      /* CONTACT */
+      React.createElement("section",{id:"contato",className:"sec-sym",style:{position:"relative",zIndex:2,padding:"72px 40px 96px",textAlign:"center",borderTop:"1px solid rgba(0,212,255,0.06)"}},
+        React.createElement(SLabel,{num:"04",label:"Contato"}),
+        React.createElement(STitle,null,React.createElement(React.Fragment,null,"Vamos Construir",React.createElement("br"),"algo juntos.")),
+        React.createElement("p",{style:{color:C.muted,fontSize:"13px",marginTop:"12px",marginBottom:"32px"}},"Aberto a projetos, colaborações e oportunidades."),
+        React.createElement("div",{className:"contact-btns",style:{display:"flex",gap:"12px",justifyContent:"center",flexWrap:"wrap"}},
+          React.createElement("a",{href:"https://github.com/OsmarZM",target:"_blank",rel:"noopener",className:"btn-primary",style:{padding:"13px 26px",background:C.cyan,color:C.bg,textDecoration:"none",borderRadius:"8px",fontWeight:700,fontSize:"12px",letterSpacing:".06em",boxShadow:"0 0 32px rgba(0,212,255,0.3)"}},"GitHub ↗"),
+          React.createElement("a",{href:"https://linkedin.com/in/osmarzm",target:"_blank",rel:"noopener",className:"btn-ghost",style:{padding:"13px 26px",border:"1px solid rgba(91,155,213,0.35)",color:"#5B9BD5",textDecoration:"none",borderRadius:"8px",fontSize:"12px",letterSpacing:".06em",background:"rgba(91,155,213,0.05)"}},"LinkedIn ↗"),
+          React.createElement("a",{href:"mailto:osmar@fortatech.com.br",className:"btn-ghost",style:{padding:"13px 26px",border:"1px solid rgba(0,212,255,0.2)",color:C.text,textDecoration:"none",borderRadius:"8px",fontSize:"12px",letterSpacing:".06em",background:"rgba(0,212,255,0.04)"}},"Email →")
+        ),
+        React.createElement("div",{className:"footer-row",style:{marginTop:"68px",paddingTop:"22px",borderTop:"1px solid rgba(255,255,255,0.04)",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"10px"}},
+          React.createElement("span",{style:{color:C.muted,fontSize:"11px"}},"© 2026 Osmar Zanateli Moreno"),
+          React.createElement("span",{style:{color:C.muted,fontSize:"11px"}},"Construído com ",React.createElement("span",{style:{color:C.cyan}},"React")," · Dark Side Only"),
+          React.createElement("a",{href:"https://github.com/OsmarZM/Portf-lio",target:"_blank",rel:"noopener",style:{color:C.cyan,textDecoration:"none",fontSize:"11px"}},"github.com/OsmarZM/Portf-lio ↗")
+        )
+      )
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+</script>
 </body>
 </html>
